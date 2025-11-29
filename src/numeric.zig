@@ -102,7 +102,7 @@ pub fn Numeric(comptime T: type) type {
         }
 
         /// Formats the `Numeric` in to a string as a primitive
-        pub fn format(self: Self, writer: *std.io.Writer) !void {
+        pub fn format(self: Self, writer: *std.Io.Writer) !void {
             _ = try writer.print("{d}", .{self.int()});
         }
     };

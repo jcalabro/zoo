@@ -41,7 +41,7 @@ pub fn set(self: *Self, comptime msg: []const u8, args: anytype) Allocator.Error
 }
 
 /// Formats the `Error` in to a string
-pub fn format(self: Self, writer: *std.io.Writer) !void {
+pub fn format(self: Self, writer: *std.Io.Writer) !void {
     const msg = if (self.message) |m| m else "(none)";
     _ = try writer.print("{s}", .{msg});
 }
